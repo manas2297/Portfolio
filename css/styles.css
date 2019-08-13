@@ -1,4 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+:root{
+    --primary-color: #4cca3b;
+    --secondary-color: #8830da;
+    --text-mute: #6d635b;
+    --dark-color: #343a40;
+    /* --dark-color: #fff; */
+}
 *{
     margin: 0;
     padding: 0;
@@ -7,8 +14,11 @@
 }
 
 .nav{
+    position: fixed;
+    top:0;
+    background: white;
     width: 100%;
-    box-shadow: 0px 2px 3px 1px #ccc;
+    box-shadow: 0px 2px 3px 1px rgb(209, 209, 209);
     height: 70px;
     display: flex;
     justify-content: space-between;
@@ -16,12 +26,15 @@
     /* position: fixed; */
 }
 .logo{
-    padding-left: 40px; 
+    margin-left: 5.7em;
+    /* border: 1px solid black; */
 }
 
 .logo a{
     text-decoration: none;
-    color:#4cca3b;
+    color:var(--primary-color);
+    font-size: 1.3em;
+    font-weight: bolder;
 
 }
 .navbar ul {
@@ -34,11 +47,11 @@
 }
 .nav-items a{
     text-decoration: none;
-    color: #2e261f;
+    color: var(--dark-color);
     text-transform: uppercase;
 }
 .active{
-    background: #4cca3b;
+    background: var(--primary-color);
     border-radius: 4px;
     box-shadow: 1px 2px 2px #ccc;
     padding: 0.8em 1em;
@@ -46,7 +59,7 @@
     
 }
 .nav-items a:hover {
-    color: #4cca3b;
+    color: var(--primary-color);
 }
 .active {
     color: white !important;
@@ -62,6 +75,7 @@
     /* border: 1px solid black; */
     width: 100%;
     height: max-content;
+    margin-top:70px;
     display: flex;
     justify-content: center;    
 }
@@ -70,10 +84,11 @@
     /* background: #ccc; */
     flex: 1;
     /* height: max-content; */
-    padding: 7em 2em 3em 6em;
+    /* padding: 7em 2em 3em 6em; */
+    padding: 10% 8%;
 }
 .about-left h2{
-    color: #4cca3b;
+    color: var(--secondary-color);
     font-size: 2em;
 }
 .about-left p {
@@ -84,8 +99,11 @@
 .about-right {
     width: 50%;
     /* border: 1px solid #2e261f;     */
-    height: max-content;
     
+    
+}
+.about-right .img {
+    margin-top: 7%;
 }
 .about-right .img img{
     width: 80%;
@@ -114,3 +132,29 @@
     transition: 0.3s ease-in;
     
 }
+
+@media only screen and (max-width: 920px) {
+    .about-left h2 {
+        font-size: 1.5em;
+    }
+}
+
+/* Project Section */
+.project{
+    width: 100%;
+    
+    /* background: var(--secondary-color); */
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    padding-top:3%;
+    grid-gap: 0.5em;
+    
+}
+.project .card {
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    box-shadow: 2px 2px 4px #ccc;
+    
+}
+
